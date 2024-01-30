@@ -1,3 +1,5 @@
+
+//eventually add a featured meal, suprise me button, list of recent comments on posted recipes, likes on comments, mentions,
 const Dashboard = props => {
     return(
         <div>

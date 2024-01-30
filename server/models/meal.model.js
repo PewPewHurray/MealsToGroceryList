@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const MealSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "A name for the meal is required"]
+        required: [true, "The name for the meal is required"],
+        min: [3, "The name must be more then 2 characters"]
     },
     prepTime: {
         type: Number,
@@ -20,13 +21,13 @@ const MealSchema = new mongoose.Schema({
         required: [true, "Description is required"]
     },
     ingredients: {
-        type: Number,
+        type: Array,
         required: [true, "Must have at least one ingredient"]
     },
     instructions: {
         type: String,
         required: [true, "Instructions are required"]
     }
-}, {timeseries: true})
+}, {timestamps: true})
 
 module.exports = mongoose.model("Meal", MealSchema);
